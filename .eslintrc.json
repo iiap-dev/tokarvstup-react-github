@@ -1,0 +1,60 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "react-hooks"
+    ],
+    "rules": {
+      "react/jsx-no-useless-fragment": "warn",
+      "no-unused-expressions": "warn",
+      "jsx-a11y/anchor-is-valid": "warn",
+      "prefer-const": "off",
+      "react/function-component-definition": "warn",
+      "no-param-reassign": "warn",
+      "no-use-before-define": "warn",
+      "react/prop-types": "off",
+      "import/no-relative-packages": "off",
+      "max-len": ["error", { "code": 100, "tabWidth": 2 }],
+      "no-inline-comments": ["error"],
+      "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
+      "linebreak-style": ["error", "windows"],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "import/prefer-default-export": "off",
+      "semi": "off",
+      "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+              "ts": "never",
+              "tsx": "never",
+              "js": "never"
+          }
+      ],
+      "react/jsx-filename-extension": ["warn", {"extensions":  [".tsx", ".svg"]}],
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
+      "import/no-extraneous-dependencies": ["warn"]
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        }
+    }
+}

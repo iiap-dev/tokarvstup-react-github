@@ -1,0 +1,6 @@
+{
+  "name":"@ntm-package/dummy-section",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts"
+}
