@@ -1,20 +1,20 @@
-const { resolve } = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const TerserWebpackPlugin = require("terser-webpack-plugin");
+const { resolve } = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 
-const isProd = process.env.NODE_ENV === "production";
+const isProd = process.env.NODE_ENV === 'production';
 
 const config = {
-  mode: isProd ? "production" : "development",
+  mode: isProd ? 'production' : 'development',
   entry: {
-    index: "./src/index.tsx",
+    index: './src/index.tsx',
   },
   output: {
-    path: resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    path: resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx"],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {
     rules: [
@@ -23,35 +23,35 @@ const config = {
         exclude: /(node_modules|bower_components)/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
-              configFile: "./babel.config.js",
+              configFile: './babel.config.js',
               cacheDirectory: true,
-            }
-          }
+            },
+          },
         ],
       },
       {
         test: /\.svg$/,
-        use: ["@svgr/webpack"]
+        use: ['@svgr/webpack'],
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(eot|otf|ttf|woff|woff2)$/,
-        loader: require.resolve("file-loader"),
-      }
-    ]
+        loader: require.resolve('file-loader'),
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "public/index.html",
-      inject: true
-    })
+      template: 'public/index.html',
+      inject: true,
+    }),
   ],
-  devtool: "source-map"
+  devtool: 'source-map',
 };
 
 if (isProd) {
@@ -59,18 +59,18 @@ if (isProd) {
     minimizer: [new TerserWebpackPlugin({
       terserOptions: {
         compress: {
-          comparisons: false
+          comparisons: false,
         },
         mangle: {
-          safari10: true
+          safari10: true,
         },
         output: {
           comments: false,
           ascii_only: true,
         },
         warnings: false,
-      }
-    })
+      },
+    }),
     ],
   }
 } else {
@@ -79,8 +79,8 @@ if (isProd) {
     open: true,
     hot: false,
     compress: true,
-    stats: "errors-only",
-    liveReload: true
+    stats: 'errors-only',
+    liveReload: true,
   }
 }
 

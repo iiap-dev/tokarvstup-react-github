@@ -6,7 +6,6 @@ import App from '@ntm-package/app';
 import configureAppStore from '@ntm-package/app/configureStore';
 
 import { ContentWrapper } from './sections/ContentWrapper';
-import './i18n';
 
 const store = configureAppStore();
 

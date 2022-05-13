@@ -1,5 +1,5 @@
 {
-  "name":"@ntm-package/responsive-menu",
+  "name":"@ntm-package/navigation-bar",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts"

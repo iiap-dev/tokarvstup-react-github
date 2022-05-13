@@ -6,38 +6,38 @@ const { colors } = appTheme;
 
 export const GlobalStyle = createGlobalStyle`
   html {
+    font-size: 100%;
     box-sizing: border-box;
   }
-  
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
+
+  *, *::before, *::after {
+    box-sizing: inherit;
   }
   
   body {
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     line-height: 1.5;
     color: ${colors.basicColors.BLACK};
     background: ${colors.blueShades.DARK_BLUE};
-    
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a, a:visited, a:hover {
+    text-decoration: none;
   }
   
-  :root {
-      font-size: 14px;
-    
-    @media (min-width: 800px) {
-      font-size: 16px;
-    }
-    
-    @media (min-width: 1200px) {
-      font-size: 16px;
-    }
-  }
+  //:root {
+  //    font-size: 14px;
+  //
+  //  @media (min-width: 800px) {
+  //    font-size: 16px;
+  //  }
+  //
+  //  @media (min-width: 1200px) {
+  //    font-size: 16px;
+  //  }
+  //}
 `;
