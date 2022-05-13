@@ -1,8 +1,10 @@
 import { createAction, createSlice } from '@reduxjs/toolkit';
+import { getDevice } from '../utils/getDevice';
 import { IAppState, SetCurrentSectionAction, SetWindowSizeAction } from './types';
 
 const initialState: IAppState = {
   isReady: false,
+  deviceType: 'mobile',
   isMobile: true,
   windowSize: {
     innerWidth: 0,
@@ -23,7 +25,8 @@ export const appStore = createSlice({
     },
     setWindowSize: (state: IAppState, action: SetWindowSizeAction) => {
       state.windowSize = action.payload;
-      state.isMobile = !(action.payload.innerWidth >= 1024);
+      state.deviceType = getDevice(action.payload.innerWidth)
+      state.isMobile = !(action.payload.innerWidth >= 1024)
     },
     setCurrentSection: (state: IAppState, action: SetCurrentSectionAction) => {
       state.currentSection = action.payload;
