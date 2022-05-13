@@ -23,7 +23,7 @@ export const appStore = createSlice({
     },
     setWindowSize: (state: IAppState, action: SetWindowSizeAction) => {
       state.windowSize = action.payload;
-      state.isMobile = !(action.payload.innerWidth >= 1200);
+      state.isMobile = !(action.payload.innerWidth >= 1024);
     },
     setCurrentSection: (state: IAppState, action: SetCurrentSectionAction) => {
       state.currentSection = action.payload;

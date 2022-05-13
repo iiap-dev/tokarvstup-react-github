@@ -1,0 +1,46 @@
+//{
+//  id: 1,
+//  key: 'home',
+//  title: 'головна',
+//  link: '/',
+//},
+//{
+//id: 2,
+//key: 'instructor',
+//title: 'Your instructor',
+//link: '/#instructor',
+//},
+//{
+//id: 3,
+//key: 'dates',
+//title: 'Key dates',
+//link: '/#dates',
+//},
+//{
+//id: 4,
+//key: 'workshop',
+//title: 'Workshop',
+//link: '/#workshop',
+//
+//},
+//{
+//id: 5,
+//key: 'meeting',
+//title: 'Schedule an appointment',
+//link: '/#meeting',
+//
+//},
+//{
+//id: 6,
+//key: 'partners',
+//title: 'Partners',
+//link: '/#partners',
+//
+//},
+//{
+//id: 7,
+//key: 'contact',
+//title: 'Contact the workshop',
+//link: '/#contact',
+//
+//},

@@ -7,15 +7,16 @@ const initialValue = {
   outerHeight: 0,
 }
 
+// TODO refactor to handle more breakpoints
 export function useWindowSize(cb) {
-  const  windowSize = useRef(initialValue);
+  const windowSize = useRef(initialValue);
 
   const fetchWindowDimensionsAndSave = useCallback(() => {
     windowSize.current = {
       innerWidth: window.innerWidth,
       innerHeight: window.innerHeight,
       outerWidth: window.outerWidth,
-      outerHeight: window.outerHeight
+      outerHeight: window.outerHeight,
     };
     cb({ innerWidth: window.innerWidth, innerHeight: window.innerHeight })
   }, [cb])

@@ -23,7 +23,7 @@ export const SectionWrapper = styled.div<IMobile>`
 export const Layout = styled.div`
   display: flex;
   width: 100%;
-  z-index: 1;
+  //z-index: 1;
   justify-content: center;
   margin-top: 70px;
 `;
@@ -60,11 +60,8 @@ export const Footer = styled.footer`
 
 export const LogoWrapper = styled.div`
   display: flex;
-  padding-left: 10px;
-  margin-right: auto;
   
   svg {
-    flex: 1;
     width: 50px;
     height: 50px;
     outline: none;
