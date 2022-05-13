@@ -14,9 +14,12 @@ export type SectionType = 'home'
   | 'partners'
   | 'contact';
 
+export type DeviceType = 'mobile' | 'tablet' | 'laptop' | 'laptopLarge';
+
 // STORE
 export interface IAppState {
   isReady: boolean;
+  deviceType: DeviceType;
   isMobile: boolean;
   windowSize: IWindowSize;
   currentSection: SectionType;
