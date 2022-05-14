@@ -28,6 +28,18 @@ export const GlobalStyle = createGlobalStyle`
   a, a:visited, a:hover {
     text-decoration: none;
   }
+
+  button {
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 16px;
+    border: 0;
+    cursor: pointer;
+    padding: 12px;
+    color: ${colors.basicColors.WHITE};
+    background: ${colors.accentBackground};
+  }
   
   //:root {
   //    font-size: 14px;
