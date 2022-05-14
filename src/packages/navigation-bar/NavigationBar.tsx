@@ -6,6 +6,8 @@ import React, {
 } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { useSelector } from 'react-redux';
+import { appSelector } from '@ntm-package/app/selectors';
 import { INavigationBarProps } from './types';
 import {
   HamburgerButton, Header, LinksWrapper, MenuContent, Navigation, Toggle,
@@ -18,6 +20,8 @@ export const NavigationBar: FC<INavigationBarProps> = React.memo(({
 }) => {
   const [isShowMenu, setIsShowMenu] = useState(false);
 
+  const { deviceType } = useSelector(appSelector)
+
   const handleShowMenu = useCallback(() => (
     setIsShowMenu(!isShowMenu)
   ), [isShowMenu])
@@ -29,7 +33,7 @@ export const NavigationBar: FC<INavigationBarProps> = React.memo(({
   return (
     <BrowserRouter>
       <Header className="header">
-        <Navigation className="header__nav">
+        <Navigation className="header__nav" deviceType={deviceType}>
           <a className="header__logo" href="/">{logo}</a>
           {isMobile ? (
             <Toggle onClick={handleShowMenu} className="header__toggle toggle">
@@ -41,13 +45,16 @@ export const NavigationBar: FC<INavigationBarProps> = React.memo(({
               </HamburgerButton>
             </Toggle>
           ) : (
-            <LinksWrapper className="header__links">
-              {menuItems.map((item) => (
-                <HashLink to={item.link} smooth>
-                  <a href={item.link}>{item.title}</a>
-                </HashLink>
-              ))}
-            </LinksWrapper>
+            <>
+              <LinksWrapper className="header__links">
+                {menuItems.map((item) => (
+                  <HashLink to={item.link} smooth>
+                    {item.title}
+                  </HashLink>
+                ))}
+              </LinksWrapper>
+              <button className="header__button" type="button">Подати заяву на вступ</button>
+            </>
           )}
         </Navigation>
         {isShowMenu && (
@@ -57,6 +64,7 @@ export const NavigationBar: FC<INavigationBarProps> = React.memo(({
                 {item.title}
               </HashLink>
             ))}
+            <button className="header__button" type="button">Подати заяву на вступ</button>
           </MenuContent>
         )}
       </Header>

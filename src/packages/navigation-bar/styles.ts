@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 import { colors } from '@ntm-package/theme';
+import { DeviceType } from '@ntm-package/app/types';
 import { IHamburger } from './types';
 
 export const Header = styled.header`
   background: ${colors.basicColors.WHITE};
 `;
 
-export const Navigation = styled.nav`
+interface IDeviceType {
+    deviceType: DeviceType
+}
+export const Navigation = styled.nav<IDeviceType>`
   position: relative;
   padding: 9px 20px;
   z-index: 2;
@@ -14,6 +18,18 @@ export const Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+  ${({ deviceType }) => {
+    if (deviceType === 'laptop') {
+      return `font-size: 12px`
+    }
+
+    if (deviceType === 'laptopLarge') {
+      return `font-size: 18px`
+    }
+
+    return `font-size: 16px`
+  }}
 `;
 
 export const Toggle = styled.div`
