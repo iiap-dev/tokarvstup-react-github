@@ -7,11 +7,17 @@ export const menuItems: IMenuItem[] = [
     title: 'головна',
     link: '/',
   },
+  // {
+  //   id: 2,
+  //   key: 'vash-majster',
+  //   title: 'ваш майстер',
+  //   link: '/#vash-majster',
+  // },
   {
     id: 2,
-    key: 'vash-majster',
-    title: 'ваш майстер',
-    link: '/#vash-majster',
+    key: 'pro-nas',
+    title: 'про нас',
+    link: '/#pro-nas',
   },
   {
     id: 3,

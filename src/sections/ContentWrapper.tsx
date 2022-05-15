@@ -11,13 +11,13 @@ import { appSelector } from '@ntm-package/app/selectors';
 
 // import { Logo } from '../assets/icons/Logo';
 
-// import { StudyDetails } from './study-details/StudyDetails';
 import { NavigationBar } from '@ntm-package/navigation-bar';
-import {
-  // Header,
-  ContentLayout, Layout,
-  // Footer, ScrollLinkWrapper,
-} from './styles';
+import { StudyDetails } from './study-details/StudyDetails';
+// import {
+//   // Header,
+//   ContentLayout, Layout,
+//   // Footer, ScrollLinkWrapper,
+// } from './styles';
 import { Logo } from '../assets/icons/Logo';
 import { menuItems } from './consts';
 
@@ -53,22 +53,22 @@ export const ContentWrapper: FC = () => {
       {/*  <Logo /> */}
       <NavigationBar menuItems={menuItems} isMobile={isMobile} logo={<Logo />} />
       {/* </Header> */}
-      <Layout>
-        <ContentLayout>
-          {/* <StudyDetails isMobile={isMobile} id="home" /> */}
-          {/* { filteredItems.map((item) => ( */}
-          {/*  <Wrapper isMobile={isMobile} id={item.key}> */}
-          {/*    <SectionWrapper isMobile={isMobile}> */}
-          {/*      <DummySection */}
-          {/*        key={item.key} */}
-          {/*        content={dummyData.content} */}
-          {/*        header={dummyData.header} */}
-          {/*      /> */}
-          {/*    </SectionWrapper> */}
-          {/*  </Wrapper> */}
-          {/* )) } */}
-        </ContentLayout>
-      </Layout>
+      {/* <Layout> */}
+      {/*   <ContentLayout> */}
+      <StudyDetails isMobile={isMobile} id="home" />
+      {/* { filteredItems.map((item) => ( */}
+      {/*  <Wrapper isMobile={isMobile} id={item.key}> */}
+      {/*    <SectionWrapper isMobile={isMobile}> */}
+      {/*      <DummySection */}
+      {/*        key={item.key} */}
+      {/*        content={dummyData.content} */}
+      {/*        header={dummyData.header} */}
+      {/*      /> */}
+      {/*    </SectionWrapper> */}
+      {/*  </Wrapper> */}
+      {/* )) } */}
+      {/* </ContentLayout> */}
+      {/* </Layout> */}
       {/* <Footer> */}
       {/*  <BrowserRouter> */}
       {/*    <ScrollLinkWrapper> */}

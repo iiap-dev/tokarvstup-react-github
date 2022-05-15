@@ -1,74 +1,54 @@
-const blueShades = {
-  DARK_BLUE: '#0A202D',
-  BLUE: '#293C49',
-  LIGHT_BLUE: '#939DA1',
-  PALE_BLUE: '#EFEFEF',
-}
-
-const basicColors = {
-  BLACK: '#222222',
-  DARK_GREY: '#33343D',
-  WHITE: '#FFFFFF',
-  ORANGE: '#CB7428',
-}
-
-const primary = basicColors.ORANGE;
-const secondary = basicColors.WHITE;
-
-const primaryBackground = blueShades.DARK_BLUE;
-const secondaryBackground = blueShades.LIGHT_BLUE;
-const accentBackground = basicColors.ORANGE;
-
-// ORANGE BUTTON - PRIMARY
-const primaryButtonBackground = basicColors.ORANGE;
-const primaryButtonColor = basicColors.WHITE;
-const primaryHoverBackground = 'transparent';
-const primaryHoverBorder = basicColors.ORANGE;
-
-// WHITE BUTTON - SECONDARY
-const secondaryButtonBackground = 'transparent';
-const secondaryButtonColor = basicColors.WHITE;
-const secondaryButtonBorder = basicColors.WHITE;
-const secondaryHoverBackground = basicColors.WHITE;
-const secondaryHoverColor = blueShades.BLUE;
-
-// ICONS COLORS
-const iconPrimaryColor = basicColors.WHITE;
-const iconSecondaryColor = blueShades.DARK_BLUE;
-const iconActivePrimaryColor = basicColors.ORANGE;
-
-const primaryBorderColor = basicColors.ORANGE;
 export const colors = {
-  blueShades,
-  primary,
-  secondary,
-  basicColors,
-  primaryButtonBackground,
-  primaryButtonColor,
-  primaryHoverBackground,
-  primaryHoverBorder,
-  secondaryButtonBackground,
-  secondaryButtonColor,
-  secondaryButtonBorder,
-  secondaryHoverBackground,
-  secondaryHoverColor,
-  iconPrimaryColor,
-  iconSecondaryColor,
-  iconActivePrimaryColor,
-  primaryBorderColor,
-  primaryBackground,
-  secondaryBackground,
-  accentBackground,
+  textColor: {
+    primary: '#0F4D6B',
+    primaryTransparent: 'rgba(15, 77, 107, .5)',
+    secondary: '#FFFFFF',
+    accent: '#680F21',
+  },
+  background: {
+    primary: '#FFFFFF',
+    secondary: '#E7EDF0',
+    lightBlue: '#B7CAD2',
+    blue: '#3F7186',
+    darkBlue: '#0F4D6B',
+    accent: '#680F21',
+  },
+  opacity: '.7',
 }
 
-export const fontSizes = {
-  MOBILE: '14px',
-  TABLET: '16px',
-  DESKTOP: '18px',
+export const size = {
+  fontSize: {
+    navbar: {
+      mobile: '16px',
+      tablet: '14px',
+      laptop: '13px',
+      laptopLarge: '15px',
+    },
+    button: {
+      mobile: '14px',
+      tablet: '12px',
+      laptop: '10px',
+      laptopLarge: '13px',
+    },
+    h1: {
+      mobile: '40px',
+      desktop: '60px',
+    },
+    h2: {
+      mobile: '20px',
+      desktop: '40px',
+    },
+  },
 }
+
+export const transition = {
+  borderColor: 'border-color 0.4s ease 0s, background-color 0.4s ease 0s',
+  textColor: 'color 0.4s ease 0s',
+};
 
 export const appTheme = {
   colors,
-  fontSizes,
+  transition,
+  size,
 }
 

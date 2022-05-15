@@ -1,15 +1,22 @@
 import styled from 'styled-components';
-import { colors } from '@ntm-package/theme';
+import { appTheme } from '@ntm-package/theme';
 import { DeviceType } from '@ntm-package/app/types';
 import { IHamburger } from './types';
 
+const {
+  colors,
+  size,
+  transition,
+} = appTheme;
+
 export const Header = styled.header`
-  background: ${colors.basicColors.WHITE};
+  background: ${colors.background.primary};
 `;
 
 interface IDeviceType {
-    deviceType: DeviceType
+  deviceType: DeviceType
 }
+
 export const Navigation = styled.nav<IDeviceType>`
   position: relative;
   padding: 9px 20px;
@@ -18,18 +25,8 @@ export const Navigation = styled.nav<IDeviceType>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  ${({ deviceType }) => {
-    if (deviceType === 'laptop') {
-      return `font-size: 12px`
-    }
 
-    if (deviceType === 'laptopLarge') {
-      return `font-size: 18px`
-    }
-
-    return `font-size: 16px`
-  }}
+  font-size: ${({ deviceType }) => `${size.fontSize.navbar[deviceType]}`}
 `;
 
 export const Toggle = styled.div`
@@ -49,7 +46,7 @@ export const HamburgerButton = styled.div<IHamburger>`
     left: 0;
     width: 25px;
     height: 2px;
-    background-color: ${colors.blueShades.DARK_BLUE};
+    background-color: ${colors.background.darkBlue};
     transition: ${({ isActive }) => (isActive
     ? 'top 0.2s ease-in-out, transform 0.4s ease-in-out 0.2s, opacity 0.1s ease-in-out 0.2s'
   // eslint-disable-next-line max-len
@@ -88,7 +85,7 @@ export const HamburgerButton = styled.div<IHamburger>`
 `;
 
 // TODO research and add transition
-export const MenuContent = styled.div`
+export const MenuContent = styled.div<IDeviceType>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,12 +100,14 @@ export const MenuContent = styled.div`
   overflow: hidden;
   text-transform: uppercase;
   text-align: center;
-  background: ${colors.basicColors.WHITE};
+  z-index: 1;
+  background: ${colors.background.primary};
 
   a {
     position: relative;
     padding: 0.5625rem 10.3125rem;
-    color: ${colors.blueShades.DARK_BLUE};
+    color: ${colors.textColor.primary};
+    font-size: ${({ deviceType }) => `${size.fontSize.navbar[deviceType]}`};
 
     &:not(:last-child) {
       margin-bottom: 20px;
@@ -121,15 +120,16 @@ export const LinksWrapper = styled.div`
 
   a {
     position: relative;
-    color: ${colors.blueShades.DARK_BLUE};
+    color: ${colors.textColor.primary};
 
     &:not(:last-child) {
       margin-right: 20px;
     }
 
     &:hover {
-      text-shadow: ${colors.blueShades.DARK_BLUE} 0 0 1px;
-      transition: text-shadow 200ms ease-in-out;
+      color: ${colors.textColor.accent}
+        // transition: ${transition.textColor};
+      //transition: color 0.4s ease 0s;
     }
   }
 `;

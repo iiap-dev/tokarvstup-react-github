@@ -2,6 +2,7 @@ import React, { memo, useCallback } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMount } from 'react-use';
+import { appTheme } from '@ntm-package/theme';
 import { appActions } from './store';
 import { StyledLayout } from '../layouts/StyledLayout';
 import { appSelector } from './selectors';
@@ -19,7 +20,7 @@ const App: React.FC = (memo(({ children }) => {
   const handleSetSize = useCallback((payload) => dispatch(appActions.setWindowSize(payload)), []);
   useWindowSize(handleSetSize);
 
-  const theme = {}
+  const theme = appTheme
 
   if (!isReady) {
     return <div>Wait...</div>;
