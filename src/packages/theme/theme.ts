@@ -13,7 +13,7 @@ export const colors = {
     darkBlue: '#0F4D6B',
     accent: '#680F21',
   },
-  opacity: '.7',
+  opacity: '.4',
 }
 
 export const size = {
@@ -37,6 +37,10 @@ export const size = {
     h2: {
       mobile: '20px',
       desktop: '40px',
+    },
+    h3: {
+      mobile: '27px',
+      desktop: '38px',
     },
   },
 }

@@ -80,7 +80,17 @@ export const GlobalStyle = createGlobalStyle`
   }
   }
   
+  h3 {
+    font-size: ${fontSize.h3.mobile};
+
+    @media (min-width: 1024px) {
+      font-size: ${fontSize.h3.desktop};
+    }
+  }
+  
   p {
     font-size: 15px;
+    margin-bottom: 30px;
+    line-height: 1.8em;
   }
 `;
