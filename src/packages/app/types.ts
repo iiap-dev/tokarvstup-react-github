@@ -6,13 +6,17 @@ interface IWindowSize {
   innerHeight: number;
 }
 
-export type SectionType = 'home'
-  | 'instructor'
-  | 'dates'
-  | 'workshop'
-  | 'meeting'
-  | 'partners'
-  | 'contact';
+// export interface SectionType {} 'home'
+//   | 'instructor'
+//   | 'dates'
+//   | 'workshop'
+//   | 'meeting'
+//   | 'partners'
+//   | 'contact';
+
+// interface ISection {
+//   [section: string]: string
+// }
 
 export type DeviceType = 'mobile' | 'tablet' | 'laptop' | 'laptopLarge';
 
@@ -22,7 +26,8 @@ export interface IAppState {
   deviceType: DeviceType;
   isMobile: boolean;
   windowSize: IWindowSize;
-  currentSection: SectionType;
+  // eslint-disable-next-line no-inline-comments
+  currentSection: string; // add unique type
 }
 
 export interface IStoreWithAppState {
@@ -35,5 +40,5 @@ export type SetWindowSizeAction = (
 );
 
 export type SetCurrentSectionAction = (
-  PayloadAction<SectionType>
+  PayloadAction<string>
 )

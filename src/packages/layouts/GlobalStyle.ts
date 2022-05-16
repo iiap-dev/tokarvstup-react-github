@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { appTheme } from '@ntm-package/theme';
 import './fonts/fonts.css';
 
-const { colors } = appTheme;
+const { colors, size: { fontSize } } = appTheme;
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -21,35 +21,66 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     line-height: 1.5;
-    color: ${colors.basicColors.BLACK};
-    background: ${colors.blueShades.DARK_BLUE};
+    color: ${colors.textColor.primary};
+    background: ${colors.background.primary};
   }
 
   a, a:visited, a:hover {
     text-decoration: none;
+    font-weight: 600;
   }
 
   button {
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 14px;
     text-align: center;
-    border-radius: 16px;
     border: 0;
     cursor: pointer;
-    padding: 12px;
-    color: ${colors.basicColors.WHITE};
-    background: ${colors.accentBackground};
+    padding: 15px 12px;
+    text-transform: uppercase;
+    color: ${colors.textColor.secondary};
+    background: ${colors.background.accent};
+    
+    :hover {
+      opacity: .7;
+    }
+    
+    @media (min-width: 768px) {
+      font-size: ${fontSize.button.tablet};
+    }
+
+    @media (min-width: 1024px) {
+      font-size: ${fontSize.button.laptop};
+    }
+
+    @media (min-width: 1440px) {
+      font-size: ${fontSize.button.laptopLarge};
+    }
+  }
+
+  h1 {
+    font-size: ${fontSize.h1.mobile};
+    margin: 30px 0;
+    line-height: 60px;
+    color: ${colors.textColor.secondary};
+
+    @media (min-width: 1024px) {
+      font-size: ${fontSize.h1.desktop};
+    }
+  }
+
+  h2 {
+    font-size: ${fontSize.h2.mobile};
+    margin: 20px 0;
+    line-height: 30px;
+    color: ${colors.textColor.secondary};
+
+    @media (min-width: 1024px) {
+    font-size: ${fontSize.h2.desktop};
+  }
   }
   
-  //:root {
-  //    font-size: 14px;
-  //
-  //  @media (min-width: 800px) {
-  //    font-size: 16px;
-  //  }
-  //
-  //  @media (min-width: 1200px) {
-  //    font-size: 16px;
-  //  }
-  //}
+  p {
+    font-size: 15px;
+  }
 `;

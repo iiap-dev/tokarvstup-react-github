@@ -11,13 +11,14 @@ import { appSelector } from '@ntm-package/app/selectors';
 
 // import { Logo } from '../assets/icons/Logo';
 
-// import { StudyDetails } from './study-details/StudyDetails';
 import { NavigationBar } from '@ntm-package/navigation-bar';
-import {
-  // Header,
-  ContentLayout, Layout,
-  // Footer, ScrollLinkWrapper,
-} from './styles';
+import { Hero } from '@ntm-package/hero';
+import { StudyDetails } from './study-details/StudyDetails';
+// import {
+//   // Header,
+//   ContentLayout, Layout,
+//   // Footer, ScrollLinkWrapper,
+// } from './styles';
 import { Logo } from '../assets/icons/Logo';
 import { menuItems } from './consts';
 
@@ -47,28 +48,32 @@ export const ContentWrapper: FC = () => {
   //   window.scrollTo({ top: yCoordinate, behavior: 'smooth' });
   // }
 
+  const title = 'Відкрито набір на 2023 рік!';
+  const subTitle = 'Отримайте безкоштовну, якісну спеціальну освіту';
+
   return (
     <>
       {/* <Header isShowHeader={isShowHeader}> */}
       {/*  <Logo /> */}
       <NavigationBar menuItems={menuItems} isMobile={isMobile} logo={<Logo />} />
       {/* </Header> */}
-      <Layout>
-        <ContentLayout>
-          {/* <StudyDetails isMobile={isMobile} id="home" /> */}
-          {/* { filteredItems.map((item) => ( */}
-          {/*  <Wrapper isMobile={isMobile} id={item.key}> */}
-          {/*    <SectionWrapper isMobile={isMobile}> */}
-          {/*      <DummySection */}
-          {/*        key={item.key} */}
-          {/*        content={dummyData.content} */}
-          {/*        header={dummyData.header} */}
-          {/*      /> */}
-          {/*    </SectionWrapper> */}
-          {/*  </Wrapper> */}
-          {/* )) } */}
-        </ContentLayout>
-      </Layout>
+      {/* <Layout> */}
+      {/*   <ContentLayout> */}
+      <Hero title={title} subTitle={subTitle} />
+      <StudyDetails isMobile={isMobile} id="home" />
+      {/* { filteredItems.map((item) => ( */}
+      {/*  <Wrapper isMobile={isMobile} id={item.key}> */}
+      {/*    <SectionWrapper isMobile={isMobile}> */}
+      {/*      <DummySection */}
+      {/*        key={item.key} */}
+      {/*        content={dummyData.content} */}
+      {/*        header={dummyData.header} */}
+      {/*      /> */}
+      {/*    </SectionWrapper> */}
+      {/*  </Wrapper> */}
+      {/* )) } */}
+      {/* </ContentLayout> */}
+      {/* </Layout> */}
       {/* <Footer> */}
       {/*  <BrowserRouter> */}
       {/*    <ScrollLinkWrapper> */}

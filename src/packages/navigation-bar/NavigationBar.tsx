@@ -13,6 +13,7 @@ import {
   HamburgerButton, Header, LinksWrapper, MenuContent, Navigation, Toggle,
 } from './styles';
 
+// TODO add theme provider
 export const NavigationBar: FC<INavigationBarProps> = React.memo(({
   isMobile,
   logo,
@@ -58,7 +59,7 @@ export const NavigationBar: FC<INavigationBarProps> = React.memo(({
           )}
         </Navigation>
         {isShowMenu && (
-          <MenuContent id="menu-content" className="header__menu-content">
+          <MenuContent id="menu-content" className="header__menu-content" deviceType={deviceType}>
             {menuItems.map((item) => (
               <HashLink to={item.link} onClick={() => setIsShowMenu(false)} smooth>
                 {item.title}
