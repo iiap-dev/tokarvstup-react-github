@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 // import { TextCard } from './components/TextCard';
 import {
-  Greeting, Home, About,
+  About,
 } from './styles';
 import { IStudyDetailsProps } from './types';
 
@@ -41,26 +41,20 @@ export const StudyDetails: FC<IStudyDetailsProps> = ({
   // const [isShowMore, setIsSnowMore] = useState<boolean>(false);
 
   return (
-    <Home className="home">
-      <Greeting className="home__greeting">
-        <h1>Відкрито набір на 2023 рік!</h1>
-        <h2>Отримайте безкоштовну, якісну спеціальну освіту</h2>
-      </Greeting>
-      <About isMobile={isMobile}>
-        {/* {data.map((item) => ( */}
-        {/*   <TextCard> */}
-        {/*     /!* eslint-disable-next-line jsx-a11y/click-events-have-key-events *!/ */}
-        {/*     <div onClick={() => setIsSnowMore(!isShowMore)}>{item.title}</div> */}
-        {/*     { isShowMore && ( */}
-        {/*     <div>{item.description}</div> */}
-        {/*     ) } */}
-        {/*   </TextCard> */}
-        {/* ))} */}
-        {/* { data.map((item) => ( */}
-        {/*   <TextCard title={item.title} description={item.description} /> */}
-        {/* )) } */}
-      </About>
-    </Home>
+    <About isMobile={isMobile}>
+      {/* {data.map((item) => ( */}
+      {/*   <TextCard> */}
+      {/*     /!* eslint-disable-next-line jsx-a11y/click-events-have-key-events *!/ */}
+      {/*     <div onClick={() => setIsSnowMore(!isShowMore)}>{item.title}</div> */}
+      {/*     { isShowMore && ( */}
+      {/*     <div>{item.description}</div> */}
+      {/*     ) } */}
+      {/*   </TextCard> */}
+      {/* ))} */}
+      {/* { data.map((item) => ( */}
+      {/*   <TextCard title={item.title} description={item.description} /> */}
+      {/* )) } */}
+    </About>
   )
 }
 // <Wrapper isMobile={isMobile}>

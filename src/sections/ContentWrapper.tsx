@@ -12,6 +12,7 @@ import { appSelector } from '@ntm-package/app/selectors';
 // import { Logo } from '../assets/icons/Logo';
 
 import { NavigationBar } from '@ntm-package/navigation-bar';
+import { Hero } from '@ntm-package/hero';
 import { StudyDetails } from './study-details/StudyDetails';
 // import {
 //   // Header,
@@ -47,6 +48,9 @@ export const ContentWrapper: FC = () => {
   //   window.scrollTo({ top: yCoordinate, behavior: 'smooth' });
   // }
 
+  const title = 'Відкрито набір на 2023 рік!';
+  const subTitle = 'Отримайте безкоштовну, якісну спеціальну освіту';
+
   return (
     <>
       {/* <Header isShowHeader={isShowHeader}> */}
@@ -55,6 +59,7 @@ export const ContentWrapper: FC = () => {
       {/* </Header> */}
       {/* <Layout> */}
       {/*   <ContentLayout> */}
+      <Hero title={title} subTitle={subTitle} />
       <StudyDetails isMobile={isMobile} id="home" />
       {/* { filteredItems.map((item) => ( */}
       {/*  <Wrapper isMobile={isMobile} id={item.key}> */}
