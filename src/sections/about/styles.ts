@@ -8,22 +8,23 @@ export const Wrapper = styled.section<IMobile>`
   display: flex;
   flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
   
-  height: 90vh;
-  background: ${colors.background.secondary};
+  height: ${({ isMobile }) => (isMobile ? '90vh' : '95vh')};
 `;
 
-export const Text = styled.div`
+export const Text = styled.div<IMobile>`
   padding: 0 20px 40px;
-  flex-grow: 1;
+  
+  ${({ isMobile }) => !isMobile && 'width: 50%'};
 `;
 
-export const Cards = styled.div`
+export const Cards = styled.div<IMobile>`
   height: 90vh;
   color: ${colors.textColor.secondary};
   
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+
+  ${({ isMobile }) => !isMobile && `width: 50%`};
   
   > {
     &:first-child {
@@ -43,10 +44,12 @@ export const Cards = styled.div`
 export const Content = styled.div`
   padding: 20px;
   font-size: 30px !important;
+  
   flex-grow: 1;
   
   span {
     font-weight: 600;
+    text-transform: uppercase;
   }
 `;
 

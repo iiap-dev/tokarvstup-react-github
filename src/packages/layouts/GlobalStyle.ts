@@ -21,8 +21,9 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     line-height: 1.5;
+    overflow-x: hidden;
     color: ${colors.textColor.primary};
-    background: ${colors.background.primary};
+    background: ${colors.background.secondary};
   }
 
   a, a:visited, a:hover {
