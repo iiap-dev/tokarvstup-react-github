@@ -12,6 +12,7 @@ export const colors = {
     blue: '#3F7186',
     darkBlue: '#0F4D6B',
     accent: '#680F21',
+    accentLight: 'rgba(104, 15, 33, .7)',
   },
   opacity: '.4',
 }

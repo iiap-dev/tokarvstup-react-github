@@ -31,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 600;
   }
 
-  button {
+  button, .button {
     font-weight: 600;
     font-size: 14px;
     text-align: center;
