@@ -9,11 +9,8 @@ import { useSelector } from 'react-redux';
 
 import { appSelector } from '@ntm-package/app/selectors';
 
-// import { Logo } from '../assets/icons/Logo';
-
 import { NavigationBar } from '@ntm-package/navigation-bar';
-import { Hero } from '@ntm-package/hero';
-import { StudyDetails } from './study-details/StudyDetails';
+// import { StudyDetails } from './study-details/StudyDetails';
 // import {
 //   // Header,
 //   ContentLayout, Layout,
@@ -21,6 +18,8 @@ import { StudyDetails } from './study-details/StudyDetails';
 // } from './styles';
 import { Logo } from '../assets/icons/Logo';
 import { menuItems } from './consts';
+import { Hero } from '../packages/hero';
+import { About } from './about/About';
 
 export const ContentWrapper: FC = () => {
   const { isMobile } = useSelector(appSelector);
@@ -60,7 +59,8 @@ export const ContentWrapper: FC = () => {
       {/* <Layout> */}
       {/*   <ContentLayout> */}
       <Hero title={title} subTitle={subTitle} />
-      <StudyDetails isMobile={isMobile} id="home" />
+      <About isMobile={isMobile} />
+      {/* <StudyDetails isMobile={isMobile} id="home" /> */}
       {/* { filteredItems.map((item) => ( */}
       {/*  <Wrapper isMobile={isMobile} id={item.key}> */}
       {/*    <SectionWrapper isMobile={isMobile}> */}
@@ -77,6 +77,7 @@ export const ContentWrapper: FC = () => {
       {/* <Footer> */}
       {/*  <BrowserRouter> */}
       {/*    <ScrollLinkWrapper> */}
+      {/* eslint-disable-next-line max-len */}
       {/*      <HashLink to="#home" scroll={(el) => scrollToTop(el)}>Link to Top of Page</HashLink> */}
       {/*    </ScrollLinkWrapper> */}
       {/*  </BrowserRouter> */}

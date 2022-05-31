@@ -110,7 +110,7 @@ export const MenuContent = styled.div<IDeviceType>`
     font-size: ${({ deviceType }) => `${size.fontSize.navbar[deviceType]}`};
 
     &:not(:last-child) {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
   }
 `;

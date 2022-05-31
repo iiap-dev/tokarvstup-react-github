@@ -21,8 +21,9 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     line-height: 1.5;
+    overflow-x: hidden;
     color: ${colors.textColor.primary};
-    background: ${colors.background.primary};
+    background: ${colors.background.secondary};
   }
 
   a, a:visited, a:hover {
@@ -30,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 600;
   }
 
-  button {
+  button, .button {
     font-weight: 600;
     font-size: 14px;
     text-align: center;
@@ -80,7 +81,17 @@ export const GlobalStyle = createGlobalStyle`
   }
   }
   
+  h3 {
+    font-size: ${fontSize.h3.mobile};
+
+    @media (min-width: 1024px) {
+      font-size: ${fontSize.h3.desktop};
+    }
+  }
+  
   p {
     font-size: 15px;
+    margin-bottom: 30px;
+    line-height: 1.8em;
   }
 `;

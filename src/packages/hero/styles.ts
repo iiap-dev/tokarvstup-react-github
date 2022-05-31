@@ -38,7 +38,7 @@ export const Home = styled.section`
     background-size: cover;
     background-position: center center;
     background-color: ${colors.background.accent};
-    opacity: .5;
+    opacity: .4;
   }
 `;
 
